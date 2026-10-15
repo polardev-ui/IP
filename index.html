@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IP Test — Are you protected?</title>
+<meta name="description" content="Simple IP and VPN leak test. Checks IP, DNS, WebRTC and scores your VPN." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <span class="logo">ip&nbsp;test</span>
+  <button id="runTop" type="button">run</button>
+</header>
+
+<main>
+  <h1>Are you protected?</h1>
+  <p class="sub">Checks your public IP, DNS and common leaks. Everything runs in your browser — nothing is stored.</p>
+
+  <button id="run" type="button">Run test</button>
+
+  <div id="verdict" hidden>
+    <div id="verdictLabel">—</div>
+    <div id="verdictScore">—</div>
+    <p id="verdictReason"></p>
+  </div>
+
+  <ul id="tests">
+    <li data-row="ip"><span class="k">IP address</span><span class="v" data-val>—</span></li>
+    <li data-row="location"><span class="k">Location</span><span class="v" data-val>—</span></li>
+    <li data-row="isp"><span class="k">Provider</span><span class="v" data-val>—</span></li>
+    <li data-row="vpn"><span class="k">VPN</span><span class="v" data-val>—</span></li>
+    <li data-row="dns"><span class="k">DNS</span><span class="v" data-val>—</span></li>
+    <li data-row="webrtc"><span class="k">WebRTC</span><span class="v" data-val>—</span></li>
+    <li data-row="ipv6"><span class="k">IPv6</span><span class="v" data-val>—</span></li>
+  </ul>
+
+  <div id="why" hidden>
+    <h2>Why this score</h2>
+    <ul id="whyList"></ul>
+  </div>
+
+  <p class="hint" id="hint">Takes about 10 seconds.</p>
+</main>
+
+<footer>Runs locally. No logs, no tracking. Exit lists: Joe12387/open-source-vpn-ip-lists (CC0).</footer>
+
+<script src="vpn-exits.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
